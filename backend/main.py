@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
+from routers import story , job
+from db.database import create_tables
+
+create_tables()
 
 app = FastAPI(
     title="choose your own adventure game" ,
@@ -23,6 +27,10 @@ app.add_middleware(
     allow_headers=["*"], # allows all headers which are content-type , authorization
     # cookies are defined as headers in the frontend 
 )
+
+app.include_router(story.router , prefix=settings.API_PREFIX)
+app.include_router(job.router , prefix=settings.API_PREFIX)
+
 
 if __name__ == "__main__":  # this means that if the file is run as a script then run the uvicorn server 
     import uvicorn # this imports the uvicorn server which used to run the server

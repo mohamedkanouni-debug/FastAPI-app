@@ -8,12 +8,12 @@ from typing import Optional # For type hints indicating optional values
 from datetime import datetime #  For handling timestamps
 from fastapi import APIRouter , HTTPException , status , Depends , Cookie , Response , BackgroundTasks
 from sqlalchemy.orm import Session  # For database operations
-from backend.db.database import get_db , SessionLocal
-from backend.models.story import Story , StoryNode
-from backend.models.job import StoryJob
-from backend.schemas.story import  CompleteStoryResponse , CompleteStoryNodeResponse , CreateStoryRequest 
+from db.database import get_db , SessionLocal
+from models.story import Story , StoryNode
+from models.job import StoryJob
+from schemas.story import  CompleteStoryResponse , CompleteStoryNodeResponse , CreateStoryRequest 
 
-from backend.schemas.job import StoryJobResponse
+from schemas.job import StoryJobResponse
 
 # Creates a router that groups all routes under /stories
 router = APIRouter(

@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 
@@ -14,8 +14,7 @@ class StoryJobResponse(BaseModel):
     story_id : Optional[int] = None
     completed_at : Optional[datetime] = None
     error : Optional[str] = None
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 class StoryJobCreate(StoryJobBase):
     pass

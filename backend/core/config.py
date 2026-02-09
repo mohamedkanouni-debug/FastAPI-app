@@ -13,8 +13,7 @@ OPENAI_API_KEY=
 """
 
 from typing import List # use List to define a list (a List is used to define a list which is used to store data)
-
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from pydantic import field_validator
  # use BaseSettings to define a base settings the reason why we define base settings is because we want to use pydantic to validate the settings
  # settings is a class that is used to store the settings

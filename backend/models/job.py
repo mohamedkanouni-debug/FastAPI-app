@@ -1,7 +1,5 @@
-from sqlalchemy import Column, Integer, String , DateTime , Boolean , ForeignKey , JSON
-from sqlalchemy.orm import func
-from sqlalchemy.orm import relationship
-from backend.db.database import Base
+from sqlalchemy import Column, Integer, String, DateTime, func
+from db.database import Base
 
 class StoryJob(Base):
     __tablename__ = "story_job"
